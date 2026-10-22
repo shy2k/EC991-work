@@ -19,6 +19,10 @@ This repository holds the course materials: lecture slides, lab slides, Julia no
 
 Later weeks appear here as they are released.
 
+Tim's completed practice work is in the Week 1 Julia/Python notebooks and
+`week02/lab/EC991Week2/run/exercises.jl`. For a clean Windows laptop setup, see
+[`LAPTOP_SETUP.md`](LAPTOP_SETUP.md).
+
 ## Getting started
 
 Follow the [setup guide](https://aseem-patel.github.io/EC991/setup/week01_tutorial.html) from the week 1 lab. It installs Julia, VS Code, Git and Pluto, and walks you through your first GitHub repository. In short, once Julia and Git are installed:

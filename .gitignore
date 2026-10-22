@@ -1,0 +1,13 @@
+# Generated local outputs
+week01_utility.png
+week02/Figures/
+*.jl.cov
+*.jl.*.cov
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Temporary review files
+tmp/

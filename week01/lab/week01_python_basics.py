@@ -30,7 +30,7 @@ print(pv(1.0), pv(1.0, T=1000), 1 / (1 - 0.96))
 
 # Exercise 2: write u_log(c) returning log(c)
 def u_log(c):
-    return None                            # TODO
+    return np.log(c)
 check("Exercise 2", u_log(3.0) is not None and np.isclose(u_log(3.0), u_general(3.0, 1.0)))
 
 # ---- 3. Arrays, ranges and indexing ---------------------------------------
@@ -49,7 +49,7 @@ print(u(a_grid + 1.0))
 
 # Exercise 4: utility of consuming all cash on hand y + R a at every grid point
 y = 1.0
-u_cash = None                              # TODO: one line
+u_cash = u(y + R * a_grid)
 check("Exercise 4", u_cash is not None and np.allclose(u_cash, u(y + R * a_grid)))
 
 # ---- 5. Loops, conditionals, comprehensions ---------------------------------
@@ -73,8 +73,9 @@ print(v.max(), v.argmax())
 # Exercise 5: present value with a loop and a running total
 def pv_loop(y, beta, T):
     total = 0.0
-    # TODO: add beta**t * y to total for t = 0, 1, ..., T
-    return None
+    for t in range(T + 1):
+        total += beta ** t * y
+    return total
 r = pv_loop(1.0, 0.96, 10)
 check("Exercise 5", r is not None and np.isclose(r, pv(1.0, beta=0.96, T=10)))
 

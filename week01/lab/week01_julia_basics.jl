@@ -110,7 +110,7 @@ md"""
 """
 
 # ╔═╡ ea6d2257-a242-41e1-8590-e8c9c380c794
-u_log(c) = missing   # replace `missing` with your code
+u_log(c) = log(c)
 
 # ╔═╡ 9e648485-e563-4d57-acb6-ece29581cb7f
 let
@@ -175,7 +175,7 @@ md"""
 y = 1.0
 
 # ╔═╡ 5a605989-b86f-4a70-97b5-d07fc09b6f38
-u_cash = missing   # replace `missing` with a one-line broadcast
+u_cash = u.(y .+ R .* a_grid)
 
 # ╔═╡ 520cdd4e-6cc2-4055-9990-7a3a9eddbe77
 let
@@ -243,8 +243,10 @@ md"""
 # ╔═╡ d266f71b-b194-48ad-8e9d-514c1d50eb66
 function pv_loop(y, β, T)
     total = 0.0
-    # your loop here: add β^t * y to total for t = 0, 1, ..., T
-    return missing   # replace `missing` with total once the loop is written
+    for t in 0:T
+        total += β^t * y
+    end
+    return total
 end
 
 # ╔═╡ 6353fe6d-ed00-4f00-a568-1fb743eb6a14
