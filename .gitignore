@@ -1,4 +1,5 @@
 # Generated local outputs
+.venv/
 week01_utility.png
 week02/Figures/
 *.jl.cov
